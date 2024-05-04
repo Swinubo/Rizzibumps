@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
-    private Collision collision;
+    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +25,6 @@ public class Player_Movement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
-
-        
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
