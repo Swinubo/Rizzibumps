@@ -8,8 +8,6 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float movementSpeed = 6f;
     [SerializeField] float jumpForce = 5f;
 
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask ground;
     private bool isGrounded = true;
 
     // Start is called before the first frame update
