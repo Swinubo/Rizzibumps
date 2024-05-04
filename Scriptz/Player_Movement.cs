@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
+    private Collision collision;
 
     // Start is called before the first frame update
     void Start()
@@ -25,19 +26,27 @@ public class Player_Movement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
-        if (Input.GetButtonDown("Jump"))// && IsGrounded()
+        
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
         }
+    }
+
+    void OnCollisionEnter()
+    {
+        isGrounded = true;
+    }
+
+    void OnCollisionExit()
+    {
+        isGrounded = false;
     }
 
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
     }
-
-    bool IsGrounded()
-    {
-        return Physics.CheckSphere(groundCheck.position, .1f, ground);
-    }
+    
 }
