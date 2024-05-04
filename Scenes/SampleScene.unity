@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 610057248}
   - component: {fileID: 610057247}
   - component: {fileID: 610057252}
+  - component: {fileID: 610057253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -288,6 +289,24 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &610057253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610057246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e4de9b817bf0c4994a1fc5c27bdf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 6
+  jumpForce: 5
+  groundCheck: {fileID: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 610057251}
-  distanceY: 0.15
-  distanceZ: -1.2
+  distanceY: 0.5
+  distanceZ: -1.5
 --- !u!1 &1901661937
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +609,8 @@ GameObject:
   - component: {fileID: 1901661938}
   - component: {fileID: 1901661940}
   - component: {fileID: 1901661939}
+  - component: {fileID: 1901661942}
+  - component: {fileID: 1901661941}
   m_Layer: 0
   m_Name: Screen Orienter
   m_TagString: Untagged
@@ -629,6 +650,35 @@ MonoBehaviour:
   maxFOV: 150
   cam: {fileID: 963194227}
 --- !u!114 &1901661940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901661937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d1ddba549c4a4d9ea5c11944d654d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 5
+--- !u!114 &1901661941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901661937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f86f4c6587d1d4a82a731fbb67168e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 50
+  minFOV: 10
+  maxFOV: 150
+  cam: {fileID: 963194227}
+--- !u!114 &1901661942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
