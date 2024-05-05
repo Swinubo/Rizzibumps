@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class particles_follower : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player;
+
+    void Start()
+    {
+        player = GameObject.Find("Player(Clone)").GetComponent<Transform>();
+    }
 
     // Update is called once per frame
     void Update()
