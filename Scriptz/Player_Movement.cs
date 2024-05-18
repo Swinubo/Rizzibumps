@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     PhotonView view;
 
-    private bool isGrounded = true;
+    //private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +29,15 @@ public class Player_Movement : MonoBehaviour
 
             rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            //Debug.Log(isGrounded);
+            if (Input.GetButtonDown("Jump"))// && isGrounded
             {
                 Jump();
             }
         }
     }
 
-    void OnCollisionEnter()
+    /*void OnCollisionEnter()
     {
         isGrounded = true;
     }
@@ -44,7 +45,7 @@ public class Player_Movement : MonoBehaviour
     void OnCollisionExit()
     {
         isGrounded = false;
-    }
+    }*/
 
     void Jump()
     {

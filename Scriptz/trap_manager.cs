@@ -15,13 +15,14 @@ public class trap_manager : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
-        {
-            die();
+        {          
+            StartCoroutine(die());
         }
     }
 
-    private void die()
+    IEnumerator die()
     {
+        yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
